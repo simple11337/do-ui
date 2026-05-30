@@ -1,0 +1,42 @@
+{
+  "name": "do-ui",
+  "version": "0.2.0",
+  "description": "Scaffolds animated Next.js sites from one Claude Code slash command, with a token-cheap component catalog and strict style bans.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "sanity": "node scripts/sanity-check.mjs",
+    "nav": "node scripts/nav.mjs",
+    "latest": "node scripts/latest.mjs",
+    "refshot": "node scripts/refshot.mjs",
+    "validate:brief": "node scripts/validate-schema.mjs --schema do-ui/schemas/brief.schema.json --data do-ui/brief.json",
+    "validate:manifest": "node scripts/validate-schema.mjs --schema do-ui/schemas/assets.schema.json --data assets/manifest.json",
+    "validate:nodes": "node scripts/validate-schema.mjs --schema do-ui/schemas/nodes.schema.json --data do-ui/nav/nodes.json && node scripts/nav.mjs check",
+    "hash": "node scripts/hash-asset.mjs",
+    "grayscale": "node scripts/grayscale.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "contrast": "node scripts/contrast.mjs",
+    "lint:motion": "node scripts/lint-motion.mjs",
+    "no-slop": "node scripts/no-ai-slop.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "init:project": "node scripts/init-project.mjs",
+    "install:hooks": "node scripts/install-hooks.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "sharp": "^0.33.5"
+  },
+  "optionalDependencies": {
+    "lighthouse": "^12.2.1",
+    "chrome-launcher": "^1.1.2",
+    "acorn": "^8.14.0",
+    "acorn-walk": "^8.3.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "Apache-2.0"
+}

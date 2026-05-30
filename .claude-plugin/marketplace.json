@@ -1,0 +1,14 @@
+{
+  "name": "do-ui-local",
+  "owner": {
+    "name": "simple11337",
+    "url": "https://github.com/simple11337/do-ui"
+  },
+  "plugins": [
+    {
+      "name": "do-ui",
+      "source": "./",
+      "description": "Scaffolds animated Next.js sites from one Claude Code slash command, with a token-cheap component catalog and strict style bans."
+    }
+  ]
+}
