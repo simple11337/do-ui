@@ -8,7 +8,7 @@
     {
       "name": "do-ui",
       "source": "./",
-      "description": "Scaffolds premium animated websites via the TEXTURA pipeline. Hard bans on emojis, em dashes, and CSS gradients. One slash command, nine questions, seven phases."
+      "description": "Scaffolds animated Next.js sites from one Claude Code slash command, with a token-cheap component catalog and strict style bans."
     }
   ]
 }
