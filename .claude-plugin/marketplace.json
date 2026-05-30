@@ -1,0 +1,14 @@
+{
+  "name": "do-ui-local",
+  "owner": {
+    "name": "simple11337",
+    "url": "https://github.com/simple11337/do-ui"
+  },
+  "plugins": [
+    {
+      "name": "do-ui",
+      "source": "./",
+      "description": "Scaffolds premium animated websites via the TEXTURA pipeline. Hard bans on emojis, em dashes, and CSS gradients. One slash command, nine questions, seven phases."
+    }
+  ]
+}

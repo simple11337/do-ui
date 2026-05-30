@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "do-ui/assets.schema.json",
+  "title": "DO-UI Asset Manifest",
+  "description": "Schema for ./assets/manifest.json. Each entry records one downloaded asset.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["file", "source", "url", "sha256", "bytes", "date"],
+    "properties": {
+      "file": {
+        "type": "string",
+        "pattern": "^\\./assets/(models|video|images|fonts)/[a-z0-9]+(-[a-z0-9]+)*__[a-z0-9-]+__[0-9]{8}\\.(glb|gltf|mp4|webm|webp|png|jpg|svg|woff2|woff|ttf)$",
+        "description": "Path relative to project root. Filename follows {kebab}__{source}__{yyyymmdd}.{ext}."
+      },
+      "source": {
+        "type": "string",
+        "enum": ["sketchfab", "openart", "kling", "googlefonts", "coolors", "pinterest", "direct", "unsplash", "pexels"]
+      },
+      "url": {
+        "type": "string",
+        "minLength": 1
+      },
+      "sha256": {
+        "type": "string",
+        "pattern": "^[a-fA-F0-9]{64}$"
+      },
+      "bytes": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "date": {
+        "type": "string",
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      },
+      "license": {
+        "type": "string",
+        "description": "Free-form license note if known, e.g. CC-BY-4.0."
+      },
+      "notes": {
+        "type": "string",
+        "maxLength": 240
+      }
+    }
+  }
+}

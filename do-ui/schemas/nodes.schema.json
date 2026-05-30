@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "do-ui/nodes.schema.json",
+  "title": "DO-UI Navigation Catalog",
+  "description": "The nav node catalog. A graph of callable things (components, blocks, recipes, designs, helper scripts) resolved on disk so only the requested node enters context.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "nodes"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "generated": { "type": "string" },
+    "nodes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/node" }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "reg", "tier", "label", "cmd", "deps", "tags"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z]+(\\.[a-z0-9-]+)+$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["component", "block", "recipe", "design", "fn"]
+        },
+        "reg": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "tier": {
+          "type": "string",
+          "enum": ["starter", "pro", "free", "builtin", "na"]
+        },
+        "label": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "cmd": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "deps": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 80 }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 40 }
+        },
+        "edges": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "requires": { "type": "array", "items": { "type": "string" } },
+            "pairs": { "type": "array", "items": { "type": "string" } },
+            "alt": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "note": { "type": "string", "maxLength": 200 }
+      }
+    }
+  }
+}

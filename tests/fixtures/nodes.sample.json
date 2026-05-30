@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "generated": "2026-05-29",
+  "nodes": [
+    {
+      "id": "rb.hero.1",
+      "kind": "block",
+      "reg": "@reactbits-pro",
+      "tier": "pro",
+      "label": "hero, variant 1",
+      "cmd": "npx shadcn@latest add @reactbits-pro/hero-1",
+      "deps": ["motion", "lucide-react"],
+      "tags": ["hero", "landing"],
+      "edges": { "requires": [], "pairs": ["rb.nav.1"], "alt": ["rb.hero.2"] }
+    },
+    {
+      "id": "rb.hero.2",
+      "kind": "block",
+      "reg": "@reactbits-pro",
+      "tier": "pro",
+      "label": "hero, variant 2",
+      "cmd": "npx shadcn@latest add @reactbits-pro/hero-2",
+      "deps": ["motion", "lucide-react", "three"],
+      "tags": ["hero", "3d", "webgl"],
+      "edges": { "requires": [], "pairs": ["rb.nav.1"], "alt": ["rb.hero.1"] }
+    },
+    {
+      "id": "rb.nav.1",
+      "kind": "block",
+      "reg": "@reactbits-pro",
+      "tier": "pro",
+      "label": "navigation, variant 1",
+      "cmd": "npx shadcn@latest add @reactbits-pro/navigation-1",
+      "deps": ["motion", "lucide-react"],
+      "tags": ["navigation", "header"],
+      "edges": { "requires": [], "pairs": ["rb.hero.1"], "alt": [] }
+    },
+    {
+      "id": "rb.cmp.silk-waves",
+      "kind": "component",
+      "reg": "@reactbits-starter",
+      "tier": "starter",
+      "label": "smooth flowing silk-like wave animation",
+      "cmd": "npx shadcn@latest add @reactbits-starter/silk-waves-tw",
+      "deps": ["three"],
+      "tags": ["background", "webgl", "waves"],
+      "edges": { "requires": [], "pairs": [], "alt": [] }
+    },
+    {
+      "id": "mui.number-ticker",
+      "kind": "component",
+      "reg": "@magicui",
+      "tier": "free",
+      "label": "count-up stats, animated metrics",
+      "cmd": "npx shadcn@latest add @magicui/number-ticker",
+      "deps": ["motion"],
+      "tags": ["number", "counter", "stats"],
+      "edges": { "requires": [], "pairs": [], "alt": [] }
+    },
+    {
+      "id": "fm.scroll-linked",
+      "kind": "recipe",
+      "reg": "motion",
+      "tier": "na",
+      "label": "scroll-linked motion",
+      "cmd": "see reeactbits SKILL.md: Framer Motion > Scroll-linked motion",
+      "deps": ["motion"],
+      "tags": ["scroll", "parallax"],
+      "edges": { "requires": [], "pairs": ["rb.hero.1"], "alt": [] }
+    },
+    {
+      "id": "dz.dark-mode",
+      "kind": "design",
+      "reg": "do-ui",
+      "tier": "na",
+      "label": "dark mode via CSS custom properties",
+      "cmd": "see do-ui/style-rules.md",
+      "deps": [],
+      "tags": ["dark-mode", "theme"],
+      "edges": { "requires": [], "pairs": [], "alt": [] }
+    },
+    {
+      "id": "fn.contrast",
+      "kind": "fn",
+      "reg": "do-ui",
+      "tier": "builtin",
+      "label": "WCAG contrast checker",
+      "cmd": "npm run contrast",
+      "deps": [],
+      "tags": ["wcag", "contrast", "accessibility"],
+      "edges": { "requires": [], "pairs": [], "alt": [] }
+    }
+  ]
+}

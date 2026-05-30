@@ -1,0 +1,26 @@
+{
+  "name": "do-ui",
+  "version": "0.2.0",
+  "description": "Scaffolds premium animated websites via the TEXTURA pipeline. Hard bans on emojis, em dashes, and CSS gradients. One slash command, nine questions, seven phases.",
+  "author": {
+    "name": "simple11337",
+    "url": "https://github.com/simple11337/do-ui"
+  },
+  "homepage": "https://github.com/simple11337/do-ui",
+  "repository": "https://github.com/simple11337/do-ui",
+  "license": "Apache-2.0",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "ui",
+    "scaffold",
+    "next.js",
+    "gsap",
+    "react-spring",
+    "framer-motion",
+    "magicui",
+    "react-bits",
+    "security",
+    "textura"
+  ]
+}
